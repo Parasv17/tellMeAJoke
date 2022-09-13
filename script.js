@@ -327,13 +327,17 @@ let arr=[`My father drank so heavily, when he blew on the birthday cake he lit t
 `I love oral sex…it's the phone bill I hate.`,
 `Children in the back seats of cars cause accidents, but accidents in the back seats of cars cause children.`,
 `I've learned that the people you care most about in life are taken from you too soon and all the less important ones just never go away.`, ]
-document.getElementsByClassName("joke_body")[0].innerHTML=arr[Math.floor(Math.random()*arr.length);
+// let index=Math.floor(Math.random()*arr.length)
+
+document.getElementsByClassName("joke_body")[0].innerHTML=arr[Math.floor(Math.random()*arr.length)]
 
 const btn=document.getElementById("btn");
 const img=document.querySelector("img");
 const audio=document.querySelector("audio");
 function newJoke(){
-    document.getElementsByClassName("joke_body")[0].innerHTML=arr[Math.floor(Math.random()*arr.length)]
+    let index=Math.floor(Math.random()*arr.length)
+    console.log(index)
+    document.getElementsByClassName("joke_body")[0].innerHTML=arr[index]
     btn.classList.add("btn_raise")
     img.classList.add("btn_raise")
     audio.currentTime=0;
